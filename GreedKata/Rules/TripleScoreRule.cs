@@ -26,7 +26,7 @@ namespace GreedKata.Rules
                 result.Score = this.score;
                 result.DiceUsed.AddRange(Enumerable.Range(0,3).Select(x => this.value));
             }
-            
+
             return result;
         }
     }

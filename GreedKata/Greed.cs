@@ -9,7 +9,7 @@ namespace GreedKata
 {
     public class Greed
     {
-        private List<IRule> rules;
+        private readonly List<IRule> rules;
 
         public Greed()
         {
@@ -21,6 +21,11 @@ namespace GreedKata
             return new List<IRule>
             {
                 new TripleScoreRule(1, 1000),
+                new TripleScoreRule(2, 200),
+                new TripleScoreRule(3, 300),
+                new TripleScoreRule(4, 400),
+                new TripleScoreRule(5, 500),
+                new TripleScoreRule(6, 600),
                 new SingleDiceRule(1, 100),
                 new SingleDiceRule(5, 50)
             };
