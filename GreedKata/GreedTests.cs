@@ -145,5 +145,13 @@ namespace GreedKata
             var result = this.greed.Score(new List<int> { 2,2,2,2,2,2 });
             Assert.AreEqual(expected, result);
         }
+
+        [TestMethod]
+        public void Given_ThreePairs_Score_800()
+        {
+            var expected = 800;
+            var result = this.greed.Score(new List<int> { 2,2,3,3,4,4 });
+            Assert.AreEqual(expected, result);
+        }
     }
 }

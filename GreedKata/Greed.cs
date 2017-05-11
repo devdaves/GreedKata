@@ -20,6 +20,7 @@ namespace GreedKata
         {
             return new List<IRule>
             {
+                new ThreePairsRule(),
                 new XOfAKindRule(6, 8),
                 new XOfAKindRule(5, 4),
                 new XOfAKindRule(4, 2),
