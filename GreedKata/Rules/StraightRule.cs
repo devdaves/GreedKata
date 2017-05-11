@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace GreedKata.Rules
 {
-    public class ThreePairsRule : IRule
+    public class StraightRule : IRule
     {
         public RuleResult Score(List<int> dice)
         {
             var result = new RuleResult();
-            var groupedDice = dice.GroupBy(x => x).ToList();
+            var straight = new List<int> {1, 2, 3, 4, 5, 6};
 
-            if (groupedDice.Count(g => g.Count() == 2) == 3)
+            if (!straight.Except(dice).Any())
             {
-                result.Score = 800;
-                result.DiceUsed = groupedDice.SelectMany(x => x.Select(y => y)).ToList();
+                result.Score = 1200;
+                result.DiceUsed = straight;
             }
 
             return result;

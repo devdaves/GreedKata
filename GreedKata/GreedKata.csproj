@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Greed.cs" />
     <Compile Include="GreedTests.cs" />
+    <Compile Include="Rules\StraightRule.cs" />
     <Compile Include="Rules\ThreePairsRule.cs" />
     <Compile Include="Rules\XOfAKindRule.cs" />
     <Compile Include="Rules\IRule.cs" />
