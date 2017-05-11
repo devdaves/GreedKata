@@ -10,10 +10,20 @@ namespace GreedKata
     [TestClass]
     public class GreedTests
     {
+        private Greed greed;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            greed = new Greed();
+        }
+
         [TestMethod]
         public void Given_Single1_Score_100()
         {
-            Assert.IsTrue(true);
+            var expected = 100;
+            var result = this.greed.Score(new List<int> {1});
+            Assert.AreEqual(expected, result);
         }
     }
 }

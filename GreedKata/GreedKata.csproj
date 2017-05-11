@@ -48,7 +48,9 @@
   <ItemGroup>
     <Compile Include="Greed.cs" />
     <Compile Include="GreedTests.cs" />
+    <Compile Include="Rules\IRule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rules\SingleDiceRule.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
