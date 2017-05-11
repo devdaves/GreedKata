@@ -8,7 +8,7 @@ namespace GreedKata.Rules
 {
     public class TripleScoreRule : IRule
     {
-        private readonly Dictionary<int, int> scoringMap = new Dictionary<int, int>
+        public static readonly Dictionary<int, int> ScoringMap = new Dictionary<int, int>
         {
             {1,1000 },
             {2,200 },
@@ -27,7 +27,7 @@ namespace GreedKata.Rules
             {
                 if (groupedDie.Count() >= 3)
                 {
-                    result.Score += scoringMap[groupedDie.Key];
+                    result.Score += ScoringMap[groupedDie.Key];
                     result.DiceUsed.AddRange(groupedDie.Take(3));
                 }
             }

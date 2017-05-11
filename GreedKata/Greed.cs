@@ -20,6 +20,9 @@ namespace GreedKata
         {
             return new List<IRule>
             {
+                new XOfAKindRule(6, 8),
+                new XOfAKindRule(5, 4),
+                new XOfAKindRule(4, 2),
                 new TripleScoreRule(),
                 new SingleDiceRule(1, 100),
                 new SingleDiceRule(5, 50)
