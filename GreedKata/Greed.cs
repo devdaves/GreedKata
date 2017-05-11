@@ -21,6 +21,7 @@ namespace GreedKata
             return new List<IRule>
             {
                 new SingleDiceRule(1, 100),
+                new SingleDiceRule(5, 50)
             };
         }
 

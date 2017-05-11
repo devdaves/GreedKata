@@ -25,5 +25,13 @@ namespace GreedKata
             var result = this.greed.Score(new List<int> {1});
             Assert.AreEqual(expected, result);
         }
+
+        [TestMethod]
+        public void Given_Single5_Score_50()
+        {
+            var expected = 50;
+            var result = this.greed.Score(new List<int> {5});
+            Assert.AreEqual(expected, result);
+        }
     }
 }
