@@ -20,12 +20,7 @@ namespace GreedKata
         {
             return new List<IRule>
             {
-                new TripleScoreRule(1, 1000),
-                new TripleScoreRule(2, 200),
-                new TripleScoreRule(3, 300),
-                new TripleScoreRule(4, 400),
-                new TripleScoreRule(5, 500),
-                new TripleScoreRule(6, 600),
+                new TripleScoreRule(),
                 new SingleDiceRule(1, 100),
                 new SingleDiceRule(5, 50)
             };

@@ -8,25 +8,30 @@ namespace GreedKata.Rules
 {
     public class TripleScoreRule : IRule
     {
-        private readonly int value;
-        private readonly int score;
-
-        public TripleScoreRule(int value, int score)
+        private readonly Dictionary<int, int> scoringMap = new Dictionary<int, int>
         {
-            this.value = value;
-            this.score = score;
-        }
+            {1,1000 },
+            {2,200 },
+            {3,300 },
+            {4,400 },
+            {5,500 },
+            {6,600 },
+        };
 
         public RuleResult Score(List<int> dice)
         {
             var result = new RuleResult();
+            var groupedDice = dice.GroupBy(x => x);
 
-            if (dice.Count(d => d == this.value) >= 3)
+            foreach (var groupedDie in groupedDice)
             {
-                result.Score = this.score;
-                result.DiceUsed.AddRange(Enumerable.Range(0,3).Select(x => this.value));
+                if (groupedDie.Count() >= 3)
+                {
+                    result.Score += scoringMap[groupedDie.Key];
+                    result.DiceUsed.AddRange(groupedDie.Take(3));
+                }
             }
-
+            
             return result;
         }
     }
