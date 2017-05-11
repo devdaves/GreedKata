@@ -81,5 +81,45 @@ namespace GreedKata
             var result = this.greed.Score(new List<int> {6,6,6});
             Assert.AreEqual(expected, result);
         }
+
+        [TestMethod]
+        public void Given_Mixed_1_1_1_5_1_Score_1150()
+        {
+            var expected = 1150;
+            var result = this.greed.Score(new List<int> { 1, 1, 1, 5, 1 });
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void Given_Mixed_2_3_4_6_2_Score_0()
+        {
+            var expected = 0;
+            var result = this.greed.Score(new List<int> { 2, 3, 4, 6, 2 });
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void Given_Mixed_3_4_5_3_3_Score_350()
+        {
+            var expected = 350;
+            var result = this.greed.Score(new List<int> { 3, 4, 5, 3, 3 });
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void Given_Mixed_1_5_1_2_4_Score_250()
+        {
+            var expected = 250;
+            var result = this.greed.Score(new List<int> { 1, 5, 1, 2, 4 });
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void Given_Mixed_5_5_5_5_5_Score_600()
+        {
+            var expected = 600;
+            var result = this.greed.Score(new List<int> { 5, 5, 5, 5, 5 });
+            Assert.AreEqual(expected, result);
+        }
     }
 }

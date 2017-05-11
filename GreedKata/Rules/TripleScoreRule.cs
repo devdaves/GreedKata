@@ -21,7 +21,7 @@ namespace GreedKata.Rules
         {
             var result = new RuleResult();
 
-            if (dice.Count(d => d == this.value) == 3)
+            if (dice.Count(d => d == this.value) >= 3)
             {
                 result.Score = this.score;
                 result.DiceUsed.AddRange(Enumerable.Range(0,3).Select(x => this.value));
