@@ -13,14 +13,20 @@ namespace GreedKata.Rules
             this.score = score;
         }
 
-        public int Score(List<int> dice)
+        public RuleResult Score(List<int> dice)
         {
-            if (dice[0] == this.value)
-            {
-                return this.score;
-            }
+            var result = new RuleResult();
 
-            return 0;
+            dice.ForEach(d =>
+            {
+                if (d == this.value)
+                {
+                    result.Score += this.score;
+                    result.DiceUsed.Add(d);
+                }
+            });
+
+            return result;
         }
     }
 }

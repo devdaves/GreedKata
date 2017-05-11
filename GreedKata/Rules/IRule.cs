@@ -4,6 +4,6 @@ namespace GreedKata.Rules
 {
     public interface IRule
     {
-        int Score(List<int> dice);
+        RuleResult Score(List<int> dice);
     }
 }

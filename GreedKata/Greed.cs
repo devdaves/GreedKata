@@ -20,6 +20,7 @@ namespace GreedKata
         {
             return new List<IRule>
             {
+                new TripleScoreRule(1, 1000),
                 new SingleDiceRule(1, 100),
                 new SingleDiceRule(5, 50)
             };
@@ -29,7 +30,12 @@ namespace GreedKata
         {
             int score = 0;
 
-            rules.ForEach(r => score += r.Score(dice));
+            rules.ForEach(r =>
+            {
+                var result = r.Score(dice);
+                score += result.Score;
+                result.DiceUsed.ForEach(du => dice.Remove(du));
+            });
 
             return score;
         }

@@ -33,5 +33,13 @@ namespace GreedKata
             var result = this.greed.Score(new List<int> {5});
             Assert.AreEqual(expected, result);
         }
+
+        [TestMethod]
+        public void Given_Triple1_Score_1000()
+        {
+            var expected = 1000;
+            var result = this.greed.Score(new List<int> {1,1,1});
+            Assert.AreEqual(expected, result);
+        }
     }
 }
